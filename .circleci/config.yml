@@ -56,12 +56,12 @@ jobs:
           at: ~/visionApi
 
       - restore_cache:
-          key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
+          key: bundle-v1-{{ checksum "package-lock.json" }}-{{ arch }}
 
       - run: bundle install
 
       - save_cache:
-          key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
+          key: bundle-v1-{{ checksum "package-lock.json" }}-{{ arch }}
           paths:
             - vendor/bundle
 
