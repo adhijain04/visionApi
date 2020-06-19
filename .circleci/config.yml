@@ -46,8 +46,8 @@ jobs:
 
   android:
     working_directory: ~/visionApi/android
-    # docker:
-    #   - image: circleci/android:api-27-node8-alpha
+    docker:
+      - image: circleci/android:api-27-node8-alpha
     steps:
       - checkout:
           path: ~/visionApi
