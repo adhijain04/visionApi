@@ -45,7 +45,7 @@ jobs:
           path: test-results
 
   android:
-    working_directory: ~/visionApi/android
+    working_directory: ~/visionApi
     docker:
       - image: circleci/android:api-27-node8-alpha
     steps:
@@ -56,12 +56,15 @@ jobs:
           at: ~/visionApi
 
       - restore_cache:
-          key: bundle-v1-{{ checksum "android/Gemfile.json" }}-{{ arch }}
+          key: bundle-v1-{{ checksum "android/Gemfile.lock" }}-{{ arch }}
 
-      - run: bundle install
+      - run:
+          command: bundle install
+          working_directory: android
+      
 
       - save_cache:
-          key: bundle-v1-{{ checksum "android/Gemfile.json" }}-{{ arch }}
+          key: bundle-v1-{{ checksum "android/Gemfile.lock" }}-{{ arch }}
           paths:
             - vendor/bundle
 
