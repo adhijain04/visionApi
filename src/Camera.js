@@ -8,7 +8,6 @@
 
 import React, {PureComponent} from 'react';
 import {
-  // AppRegistry,
   Text,
   View,
   StyleSheet,
