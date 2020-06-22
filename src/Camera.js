@@ -45,7 +45,9 @@ export default class Camera extends PureComponent {
         NativeModules.RNImageToBase64.getBase64String(
           resizedImageUri.uri,
           (err, base64) => {
-            if (err) console.log(err);
+            if (err) {
+              console.log(err);
+            }
 
             this.checkForLabels(base64);
           },
