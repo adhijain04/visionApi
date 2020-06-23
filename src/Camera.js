@@ -12,7 +12,7 @@ import {
   View,
   StyleSheet,
   TouchableOpacity,
-  NativeModules,
+  // NativeModules,
 } from 'react-native';
 
 import {RNCamera} from 'react-native-camera';
@@ -26,6 +26,7 @@ import {RNCamera} from 'react-native-camera';
 // } from 'react-native/Libraries/NewAppScreen';
 
 import ImageResizer from 'react-native-image-resizer';
+import ImgToBase64 from 'react-native-convert-image-to-base64';
 
 import config from '../config.json';
 
@@ -42,16 +43,13 @@ export default class Camera extends PureComponent {
 
     ImageResizer.createResizedImage(data.uri, 640, 480, 'JPEG', 80)
       .then(resizedImageUri => {
-        NativeModules.RNImageToBase64.getBase64String(
-          resizedImageUri.uri,
-          (err, base64) => {
-            if (err) {
-              console.log(err);
-            }
+        ImgToBase64.getBase64String(resizedImageUri.uri, (err, base64) => {
+          if (err) {
+            console.log(err);
+          }
 
-            this.checkForLabels(base64);
-          },
-        );
+          this.checkForLabels(base64);
+        });
       })
       .catch(err => {
         console.error(err);

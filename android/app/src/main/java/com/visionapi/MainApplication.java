@@ -6,7 +6,6 @@ import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
-import com.github.xfumihiro.react_native_image_to_base64.ImageToBase64Package;
 import fr.bamlab.rnimageresizer.ImageResizerPackage;
 import org.reactnative.camera.RNCameraPackage;
 import com.facebook.react.ReactInstanceManager;

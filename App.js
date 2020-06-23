@@ -10,7 +10,7 @@ import React, {Component} from 'react';
 import {StyleSheet, View, Button, StatusBar} from 'react-native';
 import Crashes from 'appcenter-crashes';
 
-// import Camera from './src/Camera';
+import Camera from './src/Camera';
 
 export default class App extends Component {
   constructor() {
@@ -34,13 +34,13 @@ export default class App extends Component {
       <>
         <StatusBar barStyle="light-content" />
         <View style={styles.container}>
-          {/* <Camera /> */}
-          <Button
+          <Camera />
+          {/* <Button
             onPress={this.onPressLearnMore}
             title="Crash"
             color="#841584"
             accessibilityLabel="Learn more about this purple button"
-          />
+          /> */}
         </View>
       </>
     );

@@ -20,14 +20,6 @@ buildscript {
 }
 
 allprojects {
-    if (project.name.contains('react-native-image-picker')) {
-        buildscript {
-            repositories {
-                jcenter()
-                maven { url "https://dl.bintray.com/android/android-tools/"  }
-            }
-        }
-    }
     repositories {
         mavenLocal()
         maven {
